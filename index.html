@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Driver Finder Pro</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🖥 Driver Finder Pro</h1>
+
+    <p>Encuentra los drivers oficiales de tu computador</p>
+
+</header>
+
+<div class="contenedor">
+
+    <label for="marca">Marca</label>
+
+    <select id="marca">
+
+        <option value="">Seleccione una marca</option>
+
+        <option value="HP">HP</option>
+
+        <option value="Lenovo">Lenovo</option>
+
+    </select>
+
+    <label for="familia">Familia</label>
+
+    <select id="familia">
+
+        <option value="">Seleccione primero una marca</option>
+
+    </select>
+
+    <label for="modelo">Modelo específico</label>
+
+    <input
+        type="text"
+        id="modelo"
+        placeholder="Ejemplo: dq2025la">
+
+    <button id="buscar">
+
+        Buscar Drivers
+
+    </button>
+
+    <div id="resultado">
+
+        <h3>Resultado</h3>
+
+        <p>Aquí aparecerá la información del equipo.</p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
