@@ -37,11 +37,18 @@
 
         <label for="modelo">Modelo específico</label>
 
-        <input
-            type="text"
-            id="modelo"
-            placeholder="Ejemplo: fa1093dx"
-        >
+        <div class="buscador-modelo">
+
+    <input
+        type="text"
+        id="modelo"
+        placeholder="Escribe el modelo..."
+        autocomplete="off"
+    >
+
+    <div id="sugerencias"></div>
+
+</div>
 
 
         <button id="buscar">

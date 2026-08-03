@@ -1,13 +1,17 @@
 const marca = document.getElementById("marca");
 const familia = document.getElementById("familia");
 const modelo = document.getElementById("modelo");
+const sugerencias = document.getElementById("sugerencias");
 const boton = document.getElementById("buscar");
 const resultado = document.getElementById("resultado");
 
 let baseDatos = {};
 
 
-// Cargar la base de datos
+// ===============================
+// CARGAR BASE DE DATOS
+// ===============================
+
 fetch("database.json")
     .then(respuesta => respuesta.json())
     .then(datos => {
@@ -19,7 +23,7 @@ fetch("database.json")
     })
     .catch(error => {
 
-        console.error("Error cargando database.json:", error);
+        console.error("Error:", error);
 
         resultado.innerHTML = `
             <h3>⚠️ Error</h3>
@@ -29,7 +33,10 @@ fetch("database.json")
     });
 
 
-// Cuando se selecciona una marca
+// ===============================
+// SELECCIONAR MARCA
+// ===============================
+
 marca.addEventListener("change", function () {
 
     familia.innerHTML = `
@@ -37,6 +44,8 @@ marca.addEventListener("change", function () {
     `;
 
     modelo.value = "";
+
+    sugerencias.innerHTML = "";
 
     if (!baseDatos[marca.value]) {
         return;
@@ -58,12 +67,87 @@ marca.addEventListener("change", function () {
 });
 
 
-// Botón Buscar Drivers
+// ===============================
+// ESCRIBIR MODELO
+// ===============================
+
+modelo.addEventListener("input", function () {
+
+    const texto = modelo.value
+        .trim()
+        .toLowerCase();
+
+    sugerencias.innerHTML = "";
+
+    if (texto.length === 0) {
+        return;
+    }
+
+    if (!baseDatos[marca.value]) {
+        return;
+    }
+
+    if (!familia.value) {
+        return;
+    }
+
+
+    const modelos =
+        baseDatos[marca.value][familia.value];
+
+
+    Object.keys(modelos).forEach(function (codigo) {
+
+        if (codigo.toLowerCase().includes(texto)) {
+
+            const elemento =
+                document.createElement("div");
+
+            elemento.className = "sugerencia";
+
+            elemento.innerHTML = `
+                <strong>${codigo}</strong>
+                <br>
+                ${modelos[codigo].nombre}
+            `;
+
+
+            elemento.addEventListener(
+                "click",
+                function () {
+
+                    modelo.value = codigo;
+
+                    sugerencias.innerHTML = "";
+
+                }
+            );
+
+
+            sugerencias.appendChild(elemento);
+
+        }
+
+    });
+
+});
+
+
+// ===============================
+// BUSCAR DRIVERS
+// ===============================
+
 boton.addEventListener("click", function () {
 
-    const marcaSeleccionada = marca.value;
-    const familiaSeleccionada = familia.value;
-    const modeloEscrito = modelo.value.trim();
+    const marcaSeleccionada =
+        marca.value;
+
+    const familiaSeleccionada =
+        familia.value;
+
+    const modeloEscrito =
+        modelo.value.trim();
+
 
     if (
         marcaSeleccionada === "" ||
@@ -75,40 +159,23 @@ boton.addEventListener("click", function () {
             <h3>⚠️ Faltan datos</h3>
 
             <p>
-                Selecciona la marca, la familia y escribe
-                el modelo específico.
+                Selecciona la marca, la familia
+                y el modelo.
             </p>
         `;
 
         return;
+
     }
 
 
-    const familias = baseDatos[marcaSeleccionada];
-
-    if (!familias) {
-
-        resultado.innerHTML = `
-            <h3>❌ Marca no encontrada</h3>
-        `;
-
-        return;
-    }
+    const modelos =
+        baseDatos[marcaSeleccionada]
+        [familiaSeleccionada];
 
 
-    const modelos = familias[familiaSeleccionada];
-
-    if (!modelos) {
-
-        resultado.innerHTML = `
-            <h3>❌ Familia no encontrada</h3>
-        `;
-
-        return;
-    }
-
-
-    const modeloEncontrado = modelos[modeloEscrito];
+    const modeloEncontrado =
+        modelos[modeloEscrito];
 
 
     if (!modeloEncontrado) {
@@ -117,17 +184,14 @@ boton.addEventListener("click", function () {
             <h3>❌ Modelo no encontrado</h3>
 
             <p>
-                No encontramos <b>${modeloEscrito}</b>
+                No encontramos
+                <b>${modeloEscrito}</b>
                 en nuestra base de datos.
-            </p>
-
-            <p>
-                Comprueba que escribiste correctamente
-                el modelo.
             </p>
         `;
 
         return;
+
     }
 
 

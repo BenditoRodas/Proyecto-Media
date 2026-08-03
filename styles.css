@@ -109,3 +109,31 @@ button:hover {
 .boton-descarga:hover {
     background: #218838;
 }
+.buscador-modelo {
+    position: relative;
+}
+
+#sugerencias {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.sugerencia {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.sugerencia:hover {
+    background: #f0f6ff;
+}
+
+.sugerencia strong {
+    color: #0078d7;
+}
