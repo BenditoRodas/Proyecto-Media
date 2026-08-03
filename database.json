@@ -1,25 +1,37 @@
 {
     "HP": {
         "HP 14": {
-            "fa1093dx": {
-                "nombre": "HP 14 fa1093dx",
+            "dq2025la": {
+                "nombre": "HP 14-dq2025la",
                 "url": "https://support.hp.com/"
             },
-            "dq2025la": {
-                "nombre": "HP 14 dq2025la",
+            "dq2030la": {
+                "nombre": "HP 14-dq2030la",
+                "url": "https://support.hp.com/"
+            },
+            "dq2050la": {
+                "nombre": "HP 14-dq2050la",
                 "url": "https://support.hp.com/"
             }
         },
 
         "HP 15": {
             "dy2090wm": {
-                "nombre": "HP 15 dy2090wm",
+                "nombre": "HP 15-dy2090wm",
+                "url": "https://support.hp.com/"
+            },
+            "dy2795wm": {
+                "nombre": "HP 15-dy2795wm",
                 "url": "https://support.hp.com/"
             }
         },
 
         "HP Pavilion 14": {
             "dv1000": {
+                "nombre": "HP Pavilion 14",
+                "url": "https://support.hp.com/"
+            },
+            "dv2000": {
                 "nombre": "HP Pavilion 14",
                 "url": "https://support.hp.com/"
             }
@@ -29,12 +41,24 @@
             "eg0000": {
                 "nombre": "HP Pavilion 15",
                 "url": "https://support.hp.com/"
+            },
+            "eh0000": {
+                "nombre": "HP Pavilion 15",
+                "url": "https://support.hp.com/"
             }
         },
 
         "HP Victus 15": {
             "fa1093dx": {
                 "nombre": "HP Victus 15 fa1093dx",
+                "url": "https://support.hp.com/"
+            },
+            "fa1031dx": {
+                "nombre": "HP Victus 15 fa1031dx",
+                "url": "https://support.hp.com/"
+            },
+            "fb0000": {
+                "nombre": "HP Victus 15",
                 "url": "https://support.hp.com/"
             }
         },
@@ -43,19 +67,31 @@
             "d0000": {
                 "nombre": "HP Victus 16",
                 "url": "https://support.hp.com/"
+            },
+            "r0000": {
+                "nombre": "HP Victus 16",
+                "url": "https://support.hp.com/"
             }
         },
 
         "HP ProBook 440": {
             "g8": {
-                "nombre": "HP ProBook 440",
+                "nombre": "HP ProBook 440 G8",
+                "url": "https://support.hp.com/"
+            },
+            "g9": {
+                "nombre": "HP ProBook 440 G9",
                 "url": "https://support.hp.com/"
             }
         },
 
         "HP ProBook 450": {
             "g8": {
-                "nombre": "HP ProBook 450",
+                "nombre": "HP ProBook 450 G8",
+                "url": "https://support.hp.com/"
+            },
+            "g9": {
+                "nombre": "HP ProBook 450 G9",
                 "url": "https://support.hp.com/"
             }
         }
@@ -64,56 +100,88 @@
     "Lenovo": {
         "IdeaPad 1": {
             "15": {
-                "nombre": "Lenovo IdeaPad 1",
+                "nombre": "Lenovo IdeaPad 1 15",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "14": {
+                "nombre": "Lenovo IdeaPad 1 14",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "IdeaPad 3": {
             "15": {
-                "nombre": "Lenovo IdeaPad 3",
+                "nombre": "Lenovo IdeaPad 3 15",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "14": {
+                "nombre": "Lenovo IdeaPad 3 14",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "IdeaPad 5": {
             "15": {
-                "nombre": "Lenovo IdeaPad 5",
+                "nombre": "Lenovo IdeaPad 5 15",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "14": {
+                "nombre": "Lenovo IdeaPad 5 14",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "ThinkBook 14": {
             "g2": {
-                "nombre": "Lenovo ThinkBook 14",
+                "nombre": "Lenovo ThinkBook 14 G2",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "g3": {
+                "nombre": "Lenovo ThinkBook 14 G3",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "ThinkBook 15": {
             "g2": {
-                "nombre": "Lenovo ThinkBook 15",
+                "nombre": "Lenovo ThinkBook 15 G2",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "g3": {
+                "nombre": "Lenovo ThinkBook 15 G3",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "ThinkPad E14": {
             "g2": {
-                "nombre": "Lenovo ThinkPad E14",
+                "nombre": "Lenovo ThinkPad E14 Gen 2",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "g3": {
+                "nombre": "Lenovo ThinkPad E14 Gen 3",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "ThinkPad E15": {
             "g2": {
-                "nombre": "Lenovo ThinkPad E15",
+                "nombre": "Lenovo ThinkPad E15 Gen 2",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "g3": {
+                "nombre": "Lenovo ThinkPad E15 Gen 3",
                 "url": "https://pcsupport.lenovo.com/"
             }
         },
 
         "Legion 5": {
             "15": {
-                "nombre": "Lenovo Legion 5",
+                "nombre": "Lenovo Legion 5 15",
+                "url": "https://pcsupport.lenovo.com/"
+            },
+            "17": {
+                "nombre": "Lenovo Legion 5 17",
                 "url": "https://pcsupport.lenovo.com/"
             }
         }
