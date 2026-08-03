@@ -2,73 +2,67 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Driver Finder Pro</title>
 
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
 
-<header>
+    <header>
+        <h1>🖥 Driver Finder Pro</h1>
+        <p>Encuentra los drivers oficiales de tu computador</p>
+    </header>
 
-    <h1>🖥 Driver Finder Pro</h1>
+    <div class="contenedor">
 
-    <p>Encuentra los drivers oficiales de tu computador</p>
+        <label for="marca">Marca</label>
 
-</header>
+        <select id="marca">
+            <option value="">Seleccione una marca</option>
+            <option value="HP">HP</option>
+            <option value="Lenovo">Lenovo</option>
+        </select>
 
-<div class="contenedor">
 
-    <label for="marca">Marca</label>
+        <label for="familia">Familia</label>
 
-    <select id="marca">
+        <select id="familia">
+            <option value="">Seleccione primero una marca</option>
+        </select>
 
-        <option value="">Seleccione una marca</option>
 
-        <option value="HP">HP</option>
+        <label for="modelo">Modelo específico</label>
 
-        <option value="Lenovo">Lenovo</option>
+        <input
+            type="text"
+            id="modelo"
+            placeholder="Ejemplo: fa1093dx"
+        >
 
-    </select>
 
-    <label for="familia">Familia</label>
+        <button id="buscar">
+            🔍 Buscar Drivers
+        </button>
 
-    <select id="familia">
 
-        <option value="">Seleccione primero una marca</option>
+        <div id="resultado">
 
-    </select>
+            <h3>Resultado</h3>
 
-    <label for="modelo">Modelo específico</label>
+            <p>
+                Selecciona tu equipo para buscar sus drivers.
+            </p>
 
-    <input
-        type="text"
-        id="modelo"
-        placeholder="Ejemplo: dq2025la">
-
-    <button id="buscar">
-
-        Buscar Drivers
-
-    </button>
-
-    <div id="resultado">
-
-        <h3>Resultado</h3>
-
-        <p>Aquí aparecerá la información del equipo.</p>
+        </div>
 
     </div>
 
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

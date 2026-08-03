@@ -1,26 +1,121 @@
-[
-  {
-    "marca": "HP",
-    "familia": "HP 14",
-    "modelo": "dq2025la",
-    "url": "https://support.hp.com/co-es/drivers/selfservice/hp-14-dq2000-laptop-pc-series/32552483/model/2100188742"
-  },
-  {
-    "marca": "HP",
-    "familia": "HP Victus 15",
-    "modelo": "fa1093dx",
-    "url": "https://support.hp.com/us-en/drivers/selfservice/victus-by-hp-15.6-inch-gaming-laptop-pc-15-fa1000/2101464996/model/2101465038"
-  },
-  {
-    "marca": "Lenovo",
-    "familia": "IdeaPad 3",
-    "modelo": "15ITL6",
-    "url": "https://pcsupport.lenovo.com/co/es/products/laptops-and-netbooks/3-series/ideapad-3-15itl6"
-  },
-  {
-    "marca": "Lenovo",
-    "familia": "ThinkPad E14",
-    "modelo": "Gen 5",
-    "url": "https://pcsupport.lenovo.com/co/es/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-e14-gen-5-type-21jk-21jl"
-  }
-]
+{
+    "HP": {
+        "HP 14": {
+            "fa1093dx": {
+                "nombre": "HP 14 fa1093dx",
+                "url": "https://support.hp.com/"
+            },
+            "dq2025la": {
+                "nombre": "HP 14 dq2025la",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP 15": {
+            "dy2090wm": {
+                "nombre": "HP 15 dy2090wm",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP Pavilion 14": {
+            "dv1000": {
+                "nombre": "HP Pavilion 14",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP Pavilion 15": {
+            "eg0000": {
+                "nombre": "HP Pavilion 15",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP Victus 15": {
+            "fa1093dx": {
+                "nombre": "HP Victus 15 fa1093dx",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP Victus 16": {
+            "d0000": {
+                "nombre": "HP Victus 16",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP ProBook 440": {
+            "g8": {
+                "nombre": "HP ProBook 440",
+                "url": "https://support.hp.com/"
+            }
+        },
+
+        "HP ProBook 450": {
+            "g8": {
+                "nombre": "HP ProBook 450",
+                "url": "https://support.hp.com/"
+            }
+        }
+    },
+
+    "Lenovo": {
+        "IdeaPad 1": {
+            "15": {
+                "nombre": "Lenovo IdeaPad 1",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "IdeaPad 3": {
+            "15": {
+                "nombre": "Lenovo IdeaPad 3",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "IdeaPad 5": {
+            "15": {
+                "nombre": "Lenovo IdeaPad 5",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "ThinkBook 14": {
+            "g2": {
+                "nombre": "Lenovo ThinkBook 14",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "ThinkBook 15": {
+            "g2": {
+                "nombre": "Lenovo ThinkBook 15",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "ThinkPad E14": {
+            "g2": {
+                "nombre": "Lenovo ThinkPad E14",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "ThinkPad E15": {
+            "g2": {
+                "nombre": "Lenovo ThinkPad E15",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        },
+
+        "Legion 5": {
+            "15": {
+                "nombre": "Lenovo Legion 5",
+                "url": "https://pcsupport.lenovo.com/"
+            }
+        }
+    }
+}
