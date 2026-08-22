@@ -4,6 +4,7 @@ const modelo = document.getElementById("modelo");
 const sugerencias = document.getElementById("sugerencias");
 const boton = document.getElementById("buscar");
 const resultado = document.getElementById("resultado");
+const soporte = document.getElementById("soporte");
 
 let baseDatos = {};
 
@@ -26,20 +27,29 @@ const paginasSoporte = {
 // ==========================================
 
 fetch("database.json")
+
     .then(respuesta => respuesta.json())
+
     .then(datos => {
 
         baseDatos = datos;
 
-        console.log("Base de datos cargada correctamente");
+        console.log(
+            "Base de datos cargada correctamente"
+        );
 
     })
+
     .catch(error => {
 
-        console.error("Error cargando la base de datos:", error);
+        console.error(
+            "Error cargando la base de datos:",
+            error
+        );
 
         resultado.innerHTML = `
             <h3>⚠️ Error</h3>
+
             <p>
                 No se pudo cargar la base de datos.
             </p>
@@ -64,33 +74,47 @@ marca.addEventListener("change", function () {
 
     sugerencias.innerHTML = "";
 
+
     resultado.innerHTML = `
         <h3>Resultado</h3>
+
         <p>
-            Selecciona un modelo para buscar sus drivers.
+            Selecciona un modelo para buscar
+            sus drivers.
         </p>
     `;
 
 
     if (!baseDatos[marca.value]) {
+
         return;
+
     }
 
 
-    const familias = baseDatos[marca.value];
+    const familias =
+        baseDatos[marca.value];
 
 
-    Object.keys(familias).forEach(function (nombreFamilia) {
+    Object.keys(familias).forEach(
+        function (nombreFamilia) {
 
-        const opcion = document.createElement("option");
+            const opcion =
+                document.createElement("option");
 
-        opcion.value = nombreFamilia;
 
-        opcion.textContent = nombreFamilia;
+            opcion.value =
+                nombreFamilia;
 
-        familia.appendChild(opcion);
 
-    });
+            opcion.textContent =
+                nombreFamilia;
+
+
+            familia.appendChild(opcion);
+
+        }
+    );
 
 });
 
@@ -101,79 +125,95 @@ marca.addEventListener("change", function () {
 
 modelo.addEventListener("input", function () {
 
-    const texto = modelo.value
-        .trim()
-        .toLowerCase();
+    const texto =
+        modelo.value
+            .trim()
+            .toLowerCase();
 
 
     sugerencias.innerHTML = "";
 
 
     if (texto.length === 0) {
+
         return;
+
     }
 
 
     if (!baseDatos[marca.value]) {
+
         return;
+
     }
 
 
     if (!familia.value) {
+
         return;
+
     }
 
 
     const modelos =
-        baseDatos[marca.value][familia.value];
+        baseDatos[marca.value]
+        [familia.value];
 
 
-    Object.keys(modelos).forEach(function (codigo) {
+    Object.keys(modelos).forEach(
+        function (codigo) {
 
-        if (
-            codigo
-                .toLowerCase()
-                .includes(texto)
-        ) {
+            if (
+                codigo
+                    .toLowerCase()
+                    .includes(texto)
+            ) {
 
-            const elemento =
-                document.createElement("div");
-
-
-            elemento.className =
-                "sugerencia";
+                const elemento =
+                    document.createElement("div");
 
 
-            elemento.innerHTML = `
-                <strong>${codigo}</strong>
-                <br>
-                ${modelos[codigo].nombre}
-            `;
+                elemento.className =
+                    "sugerencia";
 
 
-            elemento.addEventListener(
-                "click",
-                function () {
+                elemento.innerHTML = `
+                    <strong>${codigo}</strong>
 
-                    modelo.value = codigo;
+                    <br>
 
-                    sugerencias.innerHTML = "";
-
-                }
-            );
+                    ${modelos[codigo].nombre}
+                `;
 
 
-            sugerencias.appendChild(elemento);
+                elemento.addEventListener(
+                    "click",
+                    function () {
+
+                        modelo.value =
+                            codigo;
+
+                        sugerencias.innerHTML =
+                            "";
+
+                    }
+                );
+
+
+                sugerencias.appendChild(
+                    elemento
+                );
+
+            }
 
         }
-
-    });
+    );
 
 });
 
 
 // ==========================================
-// BUSCAR DRIVER
+// BUSCAR DRIVERS
 // ==========================================
 
 boton.addEventListener("click", function () {
@@ -213,7 +253,7 @@ boton.addEventListener("click", function () {
     }
 
 
-    // Buscar familia
+    // Buscar marca
 
     const familias =
         baseDatos[marcaSeleccionada];
@@ -230,7 +270,7 @@ boton.addEventListener("click", function () {
     }
 
 
-    // Buscar modelos
+    // Buscar familia
 
     const modelos =
         familias[familiaSeleccionada];
@@ -256,6 +296,7 @@ boton.addEventListener("click", function () {
     if (!modeloEncontrado) {
 
         resultado.innerHTML = `
+
             <h3>❌ Modelo no encontrado</h3>
 
             <p>
@@ -266,16 +307,19 @@ boton.addEventListener("click", function () {
 
             <p>
                 Puedes buscarlo directamente
-                en el soporte oficial.
+                en el soporte oficial de
+                ${marcaSeleccionada}.
             </p>
 
             <a
                 class="boton-descarga"
                 href="${paginasSoporte[marcaSeleccionada]}"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 🔎 Buscar en soporte oficial
             </a>
+
         `;
 
         return;
@@ -304,15 +348,51 @@ boton.addEventListener("click", function () {
             ${modeloEncontrado.nombre}
         </p>
 
-
         <a
             class="boton-descarga"
             href="${paginasSoporte[marcaSeleccionada]}"
             target="_blank"
+            rel="noopener noreferrer"
         >
             ⬇️ Ir a drivers oficiales
         </a>
 
     `;
+
+});
+
+
+// ==========================================
+// BOTÓN "NO ENCUENTRO MI MODELO"
+// ==========================================
+
+soporte.addEventListener("click", function () {
+
+    const marcaSeleccionada =
+        marca.value;
+
+
+    if (marcaSeleccionada === "") {
+
+        resultado.innerHTML = `
+
+            <h3>⚠️ Selecciona una marca</h3>
+
+            <p>
+                Primero selecciona
+                HP o Lenovo.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    window.open(
+        paginasSoporte[marcaSeleccionada],
+        "_blank"
+    );
 
 });

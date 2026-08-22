@@ -137,3 +137,24 @@ button:hover {
 .sugerencia strong {
     color: #0078d7;
 }
+.ayuda {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ayuda p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#soporte {
+    margin-top: 5px;
+    background: #555;
+}
+
+#soporte:hover {
+    background: #333;
+}
