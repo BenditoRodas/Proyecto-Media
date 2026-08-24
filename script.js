@@ -17,7 +17,7 @@ let baseDatos = {};
 
 
 // ==========================================
-// ENLACES OFICIALES
+// ENLACES DE SOPORTE
 // ==========================================
 
 const paginasSoporte = {
@@ -55,18 +55,14 @@ fetch("database.json")
 
         baseDatos = datos;
 
-
         estado.textContent =
             "✅ Base de datos cargada correctamente";
-
 
         estado.style.background =
             "#d4edda";
 
-
         estado.style.color =
             "#155724";
-
 
         console.log(
             "Base de datos cargada correctamente"
@@ -78,18 +74,14 @@ fetch("database.json")
 
         console.error(error);
 
-
         estado.textContent =
             "❌ Error cargando la base de datos";
-
 
         estado.style.background =
             "#f8d7da";
 
-
         estado.style.color =
             "#721c24";
-
 
         resultado.innerHTML = `
 
@@ -120,11 +112,9 @@ marca.addEventListener(
 
         `;
 
-
         modelo.value = "";
 
         sugerencias.innerHTML = "";
-
 
         familia.disabled = true;
 
@@ -167,14 +157,11 @@ marca.addEventListener(
                             "option"
                         );
 
-
                     opcion.value =
                         nombreFamilia;
 
-
                     opcion.textContent =
                         nombreFamilia;
-
 
                     familia.appendChild(
                         opcion
@@ -201,7 +188,6 @@ familia.addEventListener(
         modelo.value = "";
 
         sugerencias.innerHTML = "";
-
 
         boton.disabled = true;
 
@@ -257,7 +243,6 @@ modelo.addEventListener(
 
         sugerencias.innerHTML = "";
 
-
         boton.disabled = true;
 
 
@@ -287,8 +272,7 @@ modelo.addEventListener(
             [familia.value];
 
 
-        let cantidad =
-            0;
+        let cantidad = 0;
 
 
         Object.keys(modelos)
@@ -334,11 +318,9 @@ modelo.addEventListener(
                                 modelo.value =
                                     codigo;
 
-
                                 sugerencias
                                     .innerHTML =
                                     "";
-
 
                                 boton.disabled =
                                     false;
@@ -389,10 +371,8 @@ boton.addEventListener(
         const marcaSeleccionada =
             marca.value;
 
-
         const familiaSeleccionada =
             familia.value;
-
 
         const modeloEscrito =
             modelo.value.trim();
@@ -439,6 +419,10 @@ boton.addEventListener(
             ];
 
 
+        // ==================================
+        // MODELO NO ENCONTRADO
+        // ==================================
+
         if (!modeloEncontrado) {
 
             resultado.innerHTML = `
@@ -456,8 +440,8 @@ boton.addEventListener(
                 </p>
 
                 <p>
-                    Puedes buscarlo directamente
-                    en el soporte oficial.
+                    Puedes buscarlo en el
+                    soporte oficial.
                 </p>
 
                 <a
@@ -480,6 +464,42 @@ boton.addEventListener(
         }
 
 
+        // ==================================
+        // COMPROBAR ENLACE DE DRIVE
+        // ==================================
+
+        if (
+            !modeloEncontrado.url ||
+            modeloEncontrado.url.trim() === ""
+        ) {
+
+            resultado.innerHTML = `
+
+                <h3>
+                    ⚠️ Driver todavía no disponible
+                </h3>
+
+                <p>
+                    El modelo
+                    <b>
+                        ${modeloEncontrado.nombre}
+                    </b>
+                    está registrado,
+                    pero todavía no tiene
+                    un archivo de drivers.
+                </p>
+
+            `;
+
+            return;
+
+        }
+
+
+        // ==================================
+        // MODELO ENCONTRADO
+        // ==================================
+
         resultado.innerHTML = `
 
             <h3>
@@ -501,13 +521,17 @@ boton.addEventListener(
                 ${modeloEncontrado.nombre}
             </p>
 
+            <p>
+                📦 Driver disponible
+            </p>
+
             <a
                 class="boton-descarga"
-                href="href="${modeloEncontrado.url}""
+                href="${modeloEncontrado.url}"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                ⬇️ Ir a drivers oficiales
+                ⬇️ Descargar Drivers
             </a>
 
         `;
@@ -517,7 +541,7 @@ boton.addEventListener(
 
 
 // ==========================================
-// BOTÓN SOPORTE
+// BOTÓN SOPORTE OFICIAL
 // ==========================================
 
 soporte.addEventListener(
@@ -568,6 +592,7 @@ limpiar.addEventListener(
     function () {
 
         marca.value = "";
+
 
         familia.innerHTML = `
 
