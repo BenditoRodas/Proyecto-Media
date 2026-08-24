@@ -503,11 +503,7 @@ boton.addEventListener(
 
             <a
                 class="boton-descarga"
-                href="${
-                    paginasSoporte[
-                        marcaSeleccionada
-                    ]
-                }"
+                href="href="${modeloEncontrado.url}""
                 target="_blank"
                 rel="noopener noreferrer"
             >
