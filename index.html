@@ -2,84 +2,178 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>𝐂𝐚𝐫𝐫𝐞𝐫𝐚𝟮𝟭✈︎</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="styles.css">
+    <title>Driver Finder Pro</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>𝐂𝐚𝐫𝐫𝐞𝐫𝐚𝟮𝟭✈︎</h1>
-        <p>Usame para hallar los controladores que necesites</p>
-    </header>
 
-    <div class="contenedor">
+<header>
 
-        <label for="marca">Marca</label>
+    <h1>🖥 Driver Finder Pro</h1>
 
-        <select id="marca">
-            <option value="">Seleccione una marca</option>
-            <option value="HP">HP</option>
-            <option value="Lenovo">Lenovo</option>
-        </select>
+    <p>
+        Encuentra los drivers oficiales
+        de tu computador
+    </p>
+
+</header>
 
 
-        <label for="familia">Familia</label>
+<div class="estado" id="estado">
 
-        <select id="familia">
-            <option value="">Seleccione primero una marca</option>
-        </select>
-
-
-        <label for="modelo">Modelo específico</label>
-
-        <div class="buscador-modelo">
-
-    <input
-        type="text"
-        id="modelo"
-        placeholder="Escribe el modelo..."
-        autocomplete="off"
-    >
-
-    <div id="sugerencias"></div>
+    ⏳ Cargando base de datos...
 
 </div>
 
 
-        <button id="buscar">
-            🔍 Buscar Drivers
-        </button>
+<div class="contenedor">
 
+
+    <!-- MARCA -->
+
+    <label for="marca">
+        Marca
+    </label>
+
+    <select id="marca">
+
+        <option value="">
+            Seleccione una marca
+        </option>
+
+        <option value="HP">
+            HP
+        </option>
+
+        <option value="Lenovo">
+            Lenovo
+        </option>
+
+    </select>
+
+
+
+    <!-- FAMILIA -->
+
+    <label for="familia">
+        Familia
+    </label>
+
+    <select
+        id="familia"
+        disabled
+    >
+
+        <option value="">
+            Seleccione primero una marca
+        </option>
+
+    </select>
+
+
+
+    <!-- MODELO -->
+
+    <label for="modelo">
+        Modelo específico
+    </label>
+
+
+    <div class="buscador-modelo">
+
+        <input
+            type="text"
+            id="modelo"
+            placeholder="Seleccione primero una familia"
+            autocomplete="off"
+            disabled
+        >
+
+        <div id="sugerencias"></div>
+
+    </div>
+
+
+
+    <!-- BOTONES -->
+
+    <button
+        id="buscar"
+        disabled
+    >
+
+        🔍 Buscar Drivers
+
+    </button>
+
+
+    <button
+        id="limpiar"
+        class="boton-limpiar"
+    >
+
+        🧹 Limpiar búsqueda
+
+    </button>
+
+
+
+    <!-- RESULTADO -->
 
     <div id="resultado">
 
-    <h3>Resultado</h3>
+        <h3>
+            Resultado
+        </h3>
 
-    <p>
-        Selecciona tu equipo para buscar sus drivers.
-    </p>
+        <p>
+            Selecciona tu equipo para
+            comenzar.
+        </p>
+
+    </div>
+
+
+
+    <!-- SOPORTE -->
+
+    <div class="ayuda">
+
+        <p>
+            ¿No encuentras tu modelo?
+        </p>
+
+
+        <button id="soporte">
+
+            🔎 Buscar en soporte oficial
+
+        </button>
+
+    </div>
+
 
 </div>
 
-<div class="ayuda">
 
-    <p>
-        ¿No encuentras tu modelo?
-    </p>
+<script src="script.js"></script>
 
-    <button id="soporte">
-        🔎 Buscar en soporte oficial
-    </button>
-
-</div>
-
-
-    <script src="script.js"></script>
 
 </body>
 
