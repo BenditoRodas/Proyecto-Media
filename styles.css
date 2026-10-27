@@ -1,421 +1,224 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+/* =================================
+   CARRERA PUNTO DRIVER
+   Diseño principal
+================================= */
+
+:root {
+    --azul-oscuro: #101A36;
+    --azul-secundario: #1B2848;
+    --morado: #7653D6;
+    --morado-hover: #6240BF;
+    --rojo: #D84B55;
+    --fondo: #F3F5FA;
+    --blanco: #FFFFFF;
+    --texto: #202942;
+    --texto-suave: #65708A;
+    --borde: #DCE1ED;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 body {
-
-    background: #f4f6f9;
-
-    min-height: 100vh;
-
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
 }
 
-
-/* ==========================================
-   ENCABEZADO
-========================================== */
+/* Encabezado */
 
 header {
-
-    background: #0078d7;
-
-    color: white;
-
+    background: var(--azul-oscuro);
+    color: var(--blanco);
     text-align: center;
-
-    padding: 30px 20px;
-
+    padding: 38px 20px;
+    border-bottom: 5px solid var(--morado);
 }
-
 
 header h1 {
-
-    font-size: 32px;
-
+    margin: 0;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 750;
+    letter-spacing: -0.7px;
 }
-
 
 header p {
-
-    margin-top: 10px;
-
-    font-size: 17px;
-
+    color: #C4CBE0;
+    margin: 10px 0 0;
+    font-size: 16px;
 }
 
-
-/* ==========================================
-   ESTADO
-========================================== */
-
-.estado {
-
-    width: 700px;
-
-    max-width: 90%;
-
-    margin: 20px auto 0;
-
-    padding: 12px;
-
-    text-align: center;
-
-    border-radius: 8px;
-
-    background: #fff3cd;
-
-    color: #856404;
-
-    font-weight: bold;
-
-}
-
-
-/* ==========================================
-   CONTENEDOR
-========================================== */
+/* Contenedor principal */
 
 .contenedor {
-
-    width: 700px;
-
-    max-width: 90%;
-
-    margin: 20px auto 40px;
-
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0, 0, 0, 0.15);
-
+    width: min(92%, 760px);
+    margin: 40px auto;
+    padding: 32px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(16, 26, 54, 0.09);
 }
 
-
-/* ==========================================
-   FORMULARIOS
-========================================== */
+/* Etiquetas */
 
 label {
-
     display: block;
-
-    margin-top: 18px;
-
-    font-weight: bold;
-
+    margin: 18px 0 8px;
+    color: var(--azul-oscuro);
+    font-weight: 700;
+    font-size: 15px;
 }
 
+/* Campos */
 
 select,
 input {
-
     width: 100%;
-
-    padding: 13px;
-
-    margin-top: 8px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #C9D0DF;
+    border-radius: 9px;
+    background: var(--blanco);
+    color: var(--texto);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 
 select:focus,
 input:focus {
-
-    outline: none;
-
-    border-color: #0078d7;
-
+    border-color: var(--morado);
+    box-shadow: 0 0 0 3px rgba(118, 83, 214, 0.15);
 }
 
-
+input:disabled,
 select:disabled,
-input:disabled {
-
-    background: #eeeeee;
-
-    cursor: not-allowed;
-
-}
-
-
-/* ==========================================
-   BUSCADOR
-========================================== */
-
-.buscador-modelo {
-
-    position: relative;
-
-}
-
-
-#sugerencias {
-
-    position: absolute;
-
-    width: 100%;
-
-    background: white;
-
-    border: 1px solid #ddd;
-
-    border-top: none;
-
-    border-radius:
-        0 0 8px 8px;
-
-    z-index: 100;
-
-    overflow: hidden;
-
-}
-
-
-.sugerencia {
-
-    padding: 12px;
-
-    cursor: pointer;
-
-    border-bottom:
-        1px solid #eee;
-
-}
-
-
-.sugerencia:hover {
-
-    background: #f0f6ff;
-
-}
-
-
-.sugerencia strong {
-
-    color: #0078d7;
-
-}
-
-
-/* ==========================================
-   BOTONES
-========================================== */
-
-button {
-
-    width: 100%;
-
-    margin-top: 20px;
-
-    padding: 15px;
-
-    background: #0078d7;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
-}
-
-
-button:hover {
-
-    background: #005fa3;
-
-}
-
-
 button:disabled {
-
-    background: #aaaaaa;
-
+    opacity: 0.55;
     cursor: not-allowed;
-
 }
 
+/* Botones */
 
-.boton-limpiar {
-
-    background: #6c757d;
-
+button,
+.boton-descarga {
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 10px;
+    background: var(--morado);
+    color: var(--blanco);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
 }
 
-
-.boton-limpiar:hover {
-
-    background: #545b62;
-
+button:hover:not(:disabled),
+.boton-descarga:hover {
+    background: var(--morado-hover);
+    transform: translateY(-1px);
 }
 
-
-/* ==========================================
-   RESULTADO
-========================================== */
+/* Resultado de búsqueda */
 
 #resultado {
-
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background: #f4f6f9;
-
-    border-radius: 8px;
-
+    margin-top: 28px;
+    padding: 22px;
+    background: #F7F5FF;
+    border: 1px solid #D9CEFA;
+    border-left: 5px solid var(--morado);
+    border-radius: 12px;
+    overflow-wrap: anywhere;
 }
-
 
 #resultado h3 {
-
-    margin-bottom: 10px;
-
+    margin-top: 0;
+    color: var(--azul-oscuro);
 }
 
+#resultado p {
+    margin: 8px 0;
+}
 
-/* ==========================================
-   BOTÓN DE DESCARGA
-========================================== */
+/* Enlaces de descarga */
 
-.boton-descarga {
+#resultado .boton-descarga {
+    background: var(--azul-oscuro);
+}
 
-    display: block;
+#resultado .boton-descarga:hover {
+    background: var(--rojo);
+}
 
-    margin-top: 20px;
+/* Sugerencias de modelos */
 
-    padding: 14px;
+#sugerencias {
+    margin-top: 8px;
+}
 
-    background: #28a745;
-
-    color: white;
-
-    text-align: center;
-
-    text-decoration: none;
-
+.sugerencia {
+    padding: 12px 14px;
+    margin-bottom: 7px;
+    border: 1px solid var(--borde);
     border-radius: 8px;
-
-    font-weight: bold;
-
+    background: var(--blanco);
+    cursor: pointer;
 }
 
-
-.boton-descarga:hover {
-
-    background: #218838;
-
+.sugerencia:hover {
+    border-color: var(--morado);
+    background: #F7F5FF;
 }
 
+/* Estado de la base de datos */
 
-/* ==========================================
-   AYUDA
-========================================== */
-
-.ayuda {
-
-    margin-top: 20px;
-
-    padding: 20px;
-
-    background: #f8f9fa;
-
+#estado {
+    margin-top: 16px;
+    padding: 10px 14px;
     border-radius: 8px;
-
-    text-align: center;
-
+    font-size: 14px;
 }
 
-
-.ayuda p {
-
-    margin-bottom: 10px;
-
-    font-weight: bold;
-
-}
-
+/* Botón de soporte */
 
 #soporte {
-
-    margin-top: 5px;
-
-    background: #555;
-
+    background: var(--azul-secundario);
 }
-
 
 #soporte:hover {
-
-    background: #333;
-
+    background: var(--rojo);
 }
 
-
-/* ==========================================
-   CELULARES
-========================================== */
+/* Adaptación a celulares */
 
 @media (max-width: 600px) {
-
-    header h1 {
-
-        font-size: 25px;
-
+    header {
+        padding: 28px 16px;
     }
-
-
-    header p {
-
-        font-size: 15px;
-
-    }
-
 
     .contenedor {
-
+        width: 94%;
+        margin: 22px auto;
         padding: 20px;
-
+        border-radius: 14px;
     }
 
+    header p {
+        font-size: 14px;
+    }
 
-    select,
-    input {
-
+    button,
+    .boton-descarga {
         font-size: 15px;
-
     }
-
-
-    button {
-
-        font-size: 16px;
-
-    }
-
 }
