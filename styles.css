@@ -1,20 +1,14 @@
 
-/* =================================
-   CARRERA PUNTO DRIVER
-   Diseño principal
-================================= */
-
 :root {
-    --azul-oscuro: #101A36;
-    --azul-secundario: #1B2848;
+    --azul-fondo: #0B1224;
+    --azul-panel: #101A36;
+    --azul-campo: #182542;
     --morado: #7653D6;
     --morado-hover: #6240BF;
     --rojo: #D84B55;
-    --fondo: #F3F5FA;
     --blanco: #FFFFFF;
-    --texto: #202942;
-    --texto-suave: #65708A;
-    --borde: #DCE1ED;
+    --texto-suave: #B9C4DF;
+    --borde: #34405E;
 }
 
 * {
@@ -24,86 +18,70 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--fondo);
-    color: var(--texto);
+    background: var(--azul-fondo);
+    color: var(--blanco);
     line-height: 1.6;
 }
 
-/* Encabezado */
-
 header {
-    background: var(--azul-oscuro);
+    background: var(--azul-panel);
     color: var(--blanco);
     text-align: center;
     padding: 38px 20px;
-    border-bottom: 5px solid var(--morado);
+    border-bottom: 4px solid var(--morado);
 }
 
 header h1 {
     margin: 0;
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 750;
-    letter-spacing: -0.7px;
 }
 
 header p {
-    color: #C4CBE0;
+    color: var(--texto-suave);
     margin: 10px 0 0;
-    font-size: 16px;
 }
-
-/* Contenedor principal */
 
 .contenedor {
     width: min(92%, 760px);
     margin: 40px auto;
     padding: 32px;
-    background: var(--blanco);
+    background: var(--azul-panel);
     border: 1px solid var(--borde);
     border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(16, 26, 54, 0.09);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
-
-/* Etiquetas */
 
 label {
     display: block;
     margin: 18px 0 8px;
-    color: var(--azul-oscuro);
+    color: var(--blanco);
     font-weight: 700;
-    font-size: 15px;
 }
-
-/* Campos */
 
 select,
 input {
+    display: block;
     width: 100%;
     min-height: 48px;
     padding: 12px 14px;
-    border: 1px solid #C9D0DF;
+    border: 1px solid var(--borde);
     border-radius: 9px;
-    background: var(--blanco);
-    color: var(--texto);
+    background: var(--azul-campo);
+    color: var(--blanco);
     font: inherit;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 select:focus,
 input:focus {
     border-color: var(--morado);
-    box-shadow: 0 0 0 3px rgba(118, 83, 214, 0.15);
+    box-shadow: 0 0 0 3px rgba(118, 83, 214, 0.2);
 }
 
-input:disabled,
-select:disabled,
-button:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
+input::placeholder {
+    color: var(--texto-suave);
 }
-
-/* Botones */
 
 button,
 .boton-descarga {
@@ -112,7 +90,7 @@ button,
     margin-top: 22px;
     padding: 14px 18px;
     border: none;
-    border-radius: 10px;
+    border-radius: 9px;
     background: var(--morado);
     color: var(--blanco);
     font-size: 16px;
@@ -129,38 +107,34 @@ button:hover:not(:disabled),
     transform: translateY(-1px);
 }
 
-/* Resultado de búsqueda */
-
 #resultado {
     margin-top: 28px;
     padding: 22px;
-    background: #F7F5FF;
-    border: 1px solid #D9CEFA;
-    border-left: 5px solid var(--morado);
+    background: var(--azul-campo);
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--morado);
     border-radius: 12px;
     overflow-wrap: anywhere;
 }
 
 #resultado h3 {
     margin-top: 0;
-    color: var(--azul-oscuro);
+    color: var(--blanco);
 }
 
 #resultado p {
     margin: 8px 0;
+    color: var(--texto-suave);
 }
 
-/* Enlaces de descarga */
-
 #resultado .boton-descarga {
-    background: var(--azul-oscuro);
+    background: var(--azul-fondo);
+    border: 1px solid var(--morado);
 }
 
 #resultado .boton-descarga:hover {
     background: var(--rojo);
 }
-
-/* Sugerencias de modelos */
 
 #sugerencias {
     margin-top: 8px;
@@ -171,35 +145,39 @@ button:hover:not(:disabled),
     margin-bottom: 7px;
     border: 1px solid var(--borde);
     border-radius: 8px;
-    background: var(--blanco);
+    background: var(--azul-campo);
+    color: var(--blanco);
     cursor: pointer;
 }
 
 .sugerencia:hover {
     border-color: var(--morado);
-    background: #F7F5FF;
 }
-
-/* Estado de la base de datos */
 
 #estado {
     margin-top: 16px;
     padding: 10px 14px;
     border-radius: 8px;
-    font-size: 14px;
+    color: var(--texto-suave);
 }
 
-/* Botón de soporte */
-
-#soporte {
-    background: var(--azul-secundario);
-}
-
-#soporte:hover {
+#soporte,
+.boton-soporte {
     background: var(--rojo);
+    color: var(--blanco);
 }
 
-/* Adaptación a celulares */
+#soporte:hover,
+.boton-soporte:hover {
+    background: #B93440;
+}
+
+button:disabled,
+select:disabled,
+input:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
 
 @media (max-width: 600px) {
     header {
@@ -210,15 +188,23 @@ button:hover:not(:disabled),
         width: 94%;
         margin: 22px auto;
         padding: 20px;
-        border-radius: 14px;
     }
+}
 
-    header p {
-        font-size: 14px;
-    }
+.boton-soporte {
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px 18px;
+    border-radius: 9px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: #D84B55;
+    transition: background 0.2s;
+}
 
-    button,
-    .boton-descarga {
-        font-size: 15px;
-    }
+.boton-soporte:hover {
+    background: #B93440;
 }

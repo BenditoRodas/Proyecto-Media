@@ -213,7 +213,7 @@ familia.addEventListener(
         resultado.innerHTML = `
 
             <h3>
-                🔎 Buscar modelo
+                 Buscar modelo
             </h3>
 
             <p>
@@ -454,7 +454,7 @@ boton.addEventListener(
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    🔎 Buscar en soporte oficial
+                     Buscar en soporte oficial
                 </a>
 
             `;
@@ -522,7 +522,7 @@ boton.addEventListener(
             </p>
 
             <p>
-                📦 Driver disponible
+                 Driver disponible
             </p>
 
             <a
@@ -531,7 +531,7 @@ boton.addEventListener(
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                ⬇️ Descargar Drivers
+                 Descargar Drivers
             </a>
 
         `;
