@@ -544,43 +544,6 @@ boton.addEventListener(
 // BOTÓN SOPORTE OFICIAL
 // ==========================================
 
-soporte.addEventListener(
-    "click",
-    function () {
-
-        const marcaSeleccionada =
-            marca.value;
-
-
-        if (marcaSeleccionada === "") {
-
-            resultado.innerHTML = `
-
-                <h3>
-                    ⚠️ Selecciona una marca
-                </h3>
-
-                <p>
-                    Primero selecciona
-                    HP o Lenovo.
-                </p>
-
-            `;
-
-            return;
-
-        }
-
-
-        window.open(
-            paginasSoporte[
-                marcaSeleccionada
-            ],
-            "_blank"
-        );
-
-    }
-);
 
 
 // ==========================================
